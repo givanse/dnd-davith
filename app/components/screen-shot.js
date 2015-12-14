@@ -6,6 +6,8 @@ export default Ember.Component.extend({
 
   toggleImage: true, // hide true
 
+  model: '',
+
   click: function() {
     this.toggleProperty('toggleImage');
   }

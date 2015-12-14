@@ -5,6 +5,27 @@ const fixture =
 {
   name: 'Davith',
 
+  race: 'goliath',
+
+  charClass: 'seeker',
+
+  stats: {
+    exp: 26000,
+
+    max_hp: 77,
+    surge_value: 19,
+    surges: 9,
+
+    movement: 6,
+
+    strength: 20,
+    constitution: 15,
+    dexterity: 14,
+    intelligence: 14,
+    wisdom: 21,
+    charisma: 13
+  },
+
   powers: {
     atWill: [
       {level: 1, name: 'grappling spirits'},
@@ -36,6 +57,22 @@ export default Ember.Component.extend({
 
   model: Ember.computed(function() {
     return fixture;
+  }),
+
+  race: Ember.computed('model.race', function() {
+    let race = this.get('model.race');
+    return {
+      name: race,
+      imgSrc: 'images/races/' + race + '/index.png' 
+    };
+  }),
+
+  charClass: Ember.computed('model.charClass', function() {
+    let charClass = this.get('model.charClass');
+    return {
+      name: charClass,
+      imgSrc: 'images/classes/' + charClass + '.png' 
+    };
   })
 
 });

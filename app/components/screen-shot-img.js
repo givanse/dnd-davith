@@ -6,6 +6,6 @@ export default Ember.Component.extend({
 
   classNameBindings: ['hide'],
 
-  hide: Ember.computed.alias('toggleImage') 
+  hide: Ember.computed.alias('toggleImage')
 
 });
