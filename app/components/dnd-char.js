@@ -48,6 +48,29 @@ const fixture =
     ]
   },
 
+  feats: [
+    {name: 'punishing rebuke'},
+    {name: 'two-weapon fighting'},
+    {name: 'far throw'}
+  ],
+
+  features: {
+    race: [
+      {name: 'mountain\'s tenacity'},
+      {name: 'stone\'s endurance'},
+      {name: 'powerful athlete'}
+    ],
+    charClass: [
+      {name: 'inevitable shot'},
+      {name: 'spiritbond'},
+      {name: 'spirits\' rebuke'}
+    ],
+    path: [
+    ],
+    destiny: [
+    ]
+  },
+
   items: [
     {level: 9, name: 'gleaming diamond bracers'}
   ]
