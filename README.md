@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/givanse/dnd-davith.svg?branch=master)](https://travis-ci.org/givanse/dnd-davith)
+
 # Dnd-davith
 
 This README outlines the details of collaborating on this Ember application.
