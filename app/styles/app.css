@@ -1,0 +1,27 @@
+body {
+  font-family: 'arial';
+}
+
+.screen_shot_level {
+  display: inline-block;
+  width: 20px;
+  text-align: right;
+}
+
+.screen_shot_name {
+  cursor: pointer;
+}
+
+.screen_shot_name:hover {
+  border: 0 solid black;
+  border-bottom-width: 1px;
+}
+
+.screen_shot_img > img {
+  cursor: pointer;
+  width: 100%;
+}
+
+.hide {
+  display: none
+}

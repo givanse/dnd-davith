@@ -1,0 +1,30 @@
+
+name: {{model.name}}
+
+<h3>powers</h3>
+
+{{screenshots-list title='at will'
+                   path='powers/at_will/'
+                   list=model.powers.atWill}}
+
+{{screenshots-list title='encounter'
+                   path='powers/encounter/'
+                   list=model.powers.encounter}}
+
+{{screenshots-list title='daily'
+                   path='powers/daily/'
+                   list=model.powers.daily}}
+
+{{screenshots-list title='utility'
+                   path='powers/utility/'
+                   list=model.powers.utility}}
+
+<hr>
+
+<h3>items</h3>
+
+{{screenshots-list title='armor' 
+                   path='items/'
+                   list=model.items}}
+
+{{yield}}
