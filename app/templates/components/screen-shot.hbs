@@ -1,11 +1,23 @@
-<div class="screen_shot_level">
-  {{model.level}}
-</div>
+{{#if model.level}}
+  <div class="screen_shot_level">
+    {{model.level}}
+  </div>
+{{/if}}
 
-<span class="screen_shot_name">
-  {{model.name}}
-</span>
+{{#if model.name}}
+  <span class="screen_shot_name">
+    {{model.name}}
+  </span>
+{{else}}
+  ERROR: missing name.
+{{/if}}
 
-{{screen-shot-img imgSrc=model.imgSrc toggleImage=toggleImage}}
+{{#if model.source}}
+  <span class="screen_shot_source">
+    {{model.source}}
+  </span>
+{{/if}}
+
+{{screen-shot-img imgSrc=imgSrc toggleImage=toggleImage}}
 
 {{yield}}

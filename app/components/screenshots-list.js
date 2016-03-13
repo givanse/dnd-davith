@@ -10,6 +10,7 @@ export default Ember.Component.extend({
 
   list: [],
 
+  //TODO: computed.sort()
   ssItems: Ember.computed('list', function() {
     let list = this.get('list');
 
@@ -19,13 +20,7 @@ export default Ember.Component.extend({
 
     list = list.sortBy('level');
 
-    return list.map(item => {
-      let path = this.get('path');
-
-      item.imgSrc = 'images/' + path + item.name + '.png';
-
-      return item;
-    }); 
+    return list;
   })
 
 });

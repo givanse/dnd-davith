@@ -5,9 +5,15 @@ const fixture =
 {
   name: 'Davith',
 
-  race: 'goliath',
+  race: {
+    name: 'goliath',
+    source: 'PH2, p12'
+  },
 
-  charClass: 'seeker',
+  charClass: {
+    name: 'seeker',
+    source: 'PH3, p116'
+  },
 
   stats: {
     exp: 26000,
@@ -49,16 +55,34 @@ const fixture =
   },
 
   feats: [
-    {name: 'punishing rebuke'},
-    {name: 'two-weapon fighting'},
-    {name: 'far throw'}
+    {
+      name: 'punishing rebuke',
+      source: ''
+    },
+    {
+      name: 'two-weapon fighting',
+      source: 'PH1 - heroic tier feats, p197'
+    },
+    {
+      name: 'far throw',
+      source: 'PH1 - heroic tier feats, p197'
+    }
   ],
 
   features: {
     race: [
-      {name: 'mountain\'s tenacity'},
-      {name: 'stone\'s endurance'},
-      {name: 'powerful athlete'}
+      {
+        name: 'mountain\'s tenacity',
+        source: 'PH2, p12'
+      },
+      {
+        name: 'stone\'s endurance',
+        source: 'PH2, p12'
+      },
+      {
+        name: 'powerful athlete',
+        source: 'PH2, p12'
+      }
     ],
     charClass: [
       {name: 'inevitable shot'},
@@ -87,14 +111,6 @@ export default Ember.Component.extend({
     return {
       name: race,
       imgSrc: 'images/races/' + race + '/index.png' 
-    };
-  }),
-
-  charClass: Ember.computed('model.charClass', function() {
-    let charClass = this.get('model.charClass');
-    return {
-      name: charClass,
-      imgSrc: 'images/classes/' + charClass + '.png' 
     };
   })
 

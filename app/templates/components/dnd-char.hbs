@@ -1,9 +1,11 @@
 
 <h2>{{model.name}}</h2>
 
-{{screen-shot model=race}}
+{{screen-shot model=model.race
+              path='races/'}}
 
-{{screen-shot model=charClass}}
+{{screen-shot model=model.charClass
+              path='classes/'}}
 
 <h3>powers</h3>
 
@@ -24,14 +26,14 @@
                    list=model.powers.utility}}
 <hr>
 
-<h3>feats</h3>
-
-{{screenshots-list title=''
+<!-- feats -->
+{{screenshots-list title='feats'
                    path='feats/'
                    list=model.feats}}
 <hr>
 
 <h3>features</h3>
+
 {{screenshots-list title='race'
                    path='features/race/'
                    list=model.features.race}}
