@@ -15,6 +15,11 @@ const fixture =
     source: 'PH3, p116'
   },
 
+  paragon: {
+    name: 'swift strider',
+    source: 'PH3, p133'
+  },
+
   stats: {
     exp: 26000,
 
@@ -89,7 +94,15 @@ const fixture =
       {name: 'spiritbond'},
       {name: 'spirits\' rebuke'}
     ],
-    path: [
+    paragon: [
+      {
+        name: 'defensive shift',
+        source: 'PH3, p133'
+      },
+      {
+        name: 'escaping action',
+        source: 'PH3, p133'
+      }
     ],
     destiny: [
     ]
