@@ -7,17 +7,17 @@ const fixture =
 
   race: {
     name: 'goliath',
-    source: 'PH2, p12'
+    source: 'PH2 p12'
   },
 
   charClass: {
     name: 'seeker',
-    source: 'PH3, p116'
+    source: 'PH3 p116'
   },
 
   paragon: {
     name: 'swift strider',
-    source: 'PH3, p133'
+    source: 'PH3 p133'
   },
 
   stats: {
@@ -66,11 +66,11 @@ const fixture =
     },
     {
       name: 'two-weapon fighting',
-      source: 'PH1 - heroic tier feats, p197'
+      source: 'PH1 p197'
     },
     {
       name: 'far throw',
-      source: 'PH1 - heroic tier feats, p197'
+      source: 'PH1 p197'
     }
   ],
 
@@ -78,15 +78,15 @@ const fixture =
     race: [
       {
         name: 'mountain\'s tenacity',
-        source: 'PH2, p12'
+        source: 'PH2 p12'
       },
       {
         name: 'stone\'s endurance',
-        source: 'PH2, p12'
+        source: 'PH2 p12'
       },
       {
         name: 'powerful athlete',
-        source: 'PH2, p12'
+        source: 'PH2 p12'
       }
     ],
     charClass: [
@@ -97,11 +97,11 @@ const fixture =
     paragon: [
       {
         name: 'defensive shift',
-        source: 'PH3, p133'
+        source: 'PH3 p133'
       },
       {
         name: 'escaping action',
-        source: 'PH3, p133'
+        source: 'PH3 p133'
       }
     ],
     destiny: [

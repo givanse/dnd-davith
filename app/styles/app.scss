@@ -1,3 +1,8 @@
+@import 'foundation';
+/*@include foundation-everything;*/
+@include foundation-global-styles;
+@include foundation-badge;
+
 body {
   font-family: 'arial';
 }
@@ -9,7 +14,18 @@ body {
 }
 
 .screen_shot_name {
+  padding-left: 7px;
   cursor: pointer;
+}
+
+.ss_source {
+  display: inline-block;
+}
+.ss_source_badge {
+  font-weight: bold;
+}
+.ss_source_source {
+  font-size: 0.7rem;
 }
 
 .screen_shot_name:hover {

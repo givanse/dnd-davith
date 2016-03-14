@@ -12,11 +12,7 @@
   ERROR: missing name.
 {{/if}}
 
-{{#if model.source}}
-  <span class="screen_shot_source">
-    {{model.source}}
-  </span>
-{{/if}}
+{{ss-source source=model.source}}
 
 {{screen-shot-img imgSrc=imgSrc toggleImage=toggleImage}}
 
