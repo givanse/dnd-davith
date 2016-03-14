@@ -12,14 +12,13 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{screen-shot}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), 'ERROR: missing name.');
 
   // Template block usage:" + EOL +
   this.render(hbs`
     {{#screen-shot}}
-      template block text
     {{/screen-shot}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'ERROR: missing name.');
 });
