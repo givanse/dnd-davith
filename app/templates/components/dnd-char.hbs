@@ -1,16 +1,22 @@
 
 <h2>{{model.name}}</h2>
 
-{{screen-shot model=model.race
-              path='races/'}}
+Race: {{screen-shot model=model.race
+                    path='races/'
+                    classNames='inline'}}
+<br>
 
-{{screen-shot model=model.charClass
-              path='classes/'}}
+Class: {{screen-shot model=model.charClass
+                     path='classes/'
+                     classNames='inline'}}
+<br>
 
-{{screen-shot model=model.paragon
-              path='paragons/'}}
+Paragon: {{screen-shot model=model.paragon
+                       path='paragons/'
+                       classNames='inline'}}
+<br>
 
-<h3>powers</h3>
+<h5>powers</h5>
 
 {{screenshots-list title='at will'
                    path='powers/at_will/'
@@ -27,17 +33,17 @@
 {{screenshots-list title='utility'
                    path='powers/utility/'
                    list=model.powers.utility}}
-<hr>
 
 <!-- feats -->
+<h5>heroic</h5>
 {{screenshots-list title='feats'
                    path='feats/'
                    list=model.feats}}
-<hr>
 
 <!-- features -->
-<h3>features</h3>
+<h5>features</h5>
 
+<!-- feats -->
 {{screenshots-list title='race'
                    path='features/race/'
                    list=model.features.race}}
@@ -47,9 +53,8 @@
 {{screenshots-list title='paragon'
                    path='features/paragon/'
                    list=model.features.paragon}}
-<hr>
 
-<h3>items</h3>
+<h5>items</h5>
 
 {{screenshots-list title='armor' 
                    path='items/'

@@ -2,9 +2,14 @@
 /*@include foundation-everything;*/
 @include foundation-global-styles;
 @include foundation-badge;
+@include foundation-typography;
 
 body {
   font-family: 'arial';
+}
+
+.inline {
+  display: inline-block;
 }
 
 .screen_shot_level {
@@ -40,4 +45,10 @@ body {
 
 .hide {
   display: none
+}
+
+footer {
+  min-height: 90px;
+  padding: 7px 0;
+  background-color: #ececec;
 }
