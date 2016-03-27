@@ -23,7 +23,7 @@ const fixture =
   stats: {
     exp: 26000,
 
-    max_hp: 77,
+    hp: 77,
     surge_value: 19,
     surges: 9,
 

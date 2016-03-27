@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('profile');
     this.route('powers');
     this.route('items');
+    this.route('stats');
   });
 });
 
