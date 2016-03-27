@@ -5,6 +5,22 @@ const fixture =
 {
   name: 'Davith',
 
+  size: 'M',
+
+  age: 40,
+
+  gender: 'male', 
+
+  height: 2.3,
+
+  weight: 180,
+
+  alignment: 'unaligned',
+
+  deity: '',
+
+  languages: ['common', 'giant'],
+
   race: {
     name: 'goliath',
     source: 'PH2 p12'
@@ -20,7 +36,13 @@ const fixture =
     source: 'PH3 p133'
   },
 
+  epicDestiny: {
+    name: 'blank',
+    source: ''
+  },
+
   stats: {
+    level: 10,
     exp: 26000,
 
     hp: 77,
@@ -29,12 +51,16 @@ const fixture =
 
     movement: 6,
 
-    strength: 20,
-    constitution: 15,
-    dexterity: 14,
-    intelligence: 14,
-    wisdom: 21,
-    charisma: 13
+    actionPoints: 0,
+
+    abilities: {
+      strength: 20,
+      constitution: 15,
+      dexterity: 14,
+      intelligence: 14,
+      wisdom: 21,
+      charisma: 13
+    }
   },
 
   powers: {

@@ -9,16 +9,11 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{char-stats}}`);
+  this.set('stats', {
+    exp: 9001
+  });
 
-  assert.equal(this.$().text().trim(), '');
+  this.render(hbs`{{char-stats stats=stats}}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#char-stats}}
-      template block text
-    {{/char-stats}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(/exp: 9001/.test(this.$().text()));
 });

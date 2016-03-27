@@ -9,8 +9,26 @@ Class: {{screen-shot model=model.charClass
                      classNames='inline'}}
 <br>
 
-Paragon: {{screen-shot model=model.paragon
+Paragon path: {{screen-shot model=model.paragon
                        path='paragons/'
                        classNames='inline'}}
+
+<br>
+
+Epic destiny: {{screen-shot model=model.epicDestiny
+                            path='epics/'
+                            classNames='inline'}}
+
+<ul>
+  <li>size: {{model.size}}</li>
+  <li>age: {{model.age}}</li>
+  <li>gender: {{model.gender}}</li>
+  <li>height: {{model.height}}</li>
+  <li>weight: {{model.weight}}</li>
+  <li>alignment: {{model.alignment}}</li>
+  <li>deity: {{model.deity}}</li>
+  <li>languages: {{model.languages}}</li>
+</ul>
+
 
 {{yield}}

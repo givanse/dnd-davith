@@ -10,9 +10,14 @@ export default Ember.Component.extend({
 
   path: null,
 
+  isNotBlank: Ember.computed('model.name', function() {
+    return this.get('model.name') !== 'blank';
+  }),
+
   imgSrc: Ember.computed('path', function() {
-    let path = this.get('path');
     let name = this.get('model.name');
+
+    let path = this.get('path');
 
     return 'images/' + path + name + '.png';
   }),

@@ -1,19 +1,22 @@
-{{#if model.level}}
-  <div class="screen_shot_level">
-    {{model.level}}
-  </div>
+{{#if isNotBlank}}
+  {{#if model.level}}
+    <div class="screen_shot_level">
+      {{model.level}}
+    </div>
+  {{/if}}
+
+  {{#if model.name}}
+    <span class="screen_shot_name">
+      {{model.name}}
+    </span>
+  {{else}}
+    ERROR: `screen-shot` missing model.name
+  {{/if}}
+
+
+  {{ss-source source=model.source}}
+
+  {{screen-shot-img imgSrc=imgSrc toggleImage=toggleImage}}
 {{/if}}
-
-{{#if model.name}}
-  <span class="screen_shot_name">
-    {{model.name}}
-  </span>
-{{else}}
-  ERROR: `screen-shot` missing model.name
-{{/if}}
-
-{{ss-source source=model.source}}
-
-{{screen-shot-img imgSrc=imgSrc toggleImage=toggleImage}}
 
 {{yield}}
