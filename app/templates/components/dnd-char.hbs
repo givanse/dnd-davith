@@ -1,63 +1,12 @@
 
 <h2>{{model.name}}</h2>
 
-Race: {{screen-shot model=model.race
-                    path='races/'
-                    classNames='inline'}}
+{{char-profile model=model}}
+
 <br>
 
-Class: {{screen-shot model=model.charClass
-                     path='classes/'
-                     classNames='inline'}}
-<br>
+{{char-powers model=model}}
 
-Paragon: {{screen-shot model=model.paragon
-                       path='paragons/'
-                       classNames='inline'}}
-<br>
-
-<h5>powers</h5>
-
-{{screenshots-list title='at will'
-                   path='powers/at_will/'
-                   list=model.powers.atWill}}
-
-{{screenshots-list title='encounter'
-                   path='powers/encounter/'
-                   list=model.powers.encounter}}
-
-{{screenshots-list title='daily'
-                   path='powers/daily/'
-                   list=model.powers.daily}}
-
-{{screenshots-list title='utility'
-                   path='powers/utility/'
-                   list=model.powers.utility}}
-
-<!-- feats -->
-<h5>heroic</h5>
-{{screenshots-list title='feats'
-                   path='feats/'
-                   list=model.feats}}
-
-<!-- features -->
-<h5>features</h5>
-
-<!-- feats -->
-{{screenshots-list title='race'
-                   path='features/race/'
-                   list=model.features.race}}
-{{screenshots-list title='class'
-                   path='features/class/'
-                   list=model.features.charClass}}
-{{screenshots-list title='paragon'
-                   path='features/paragon/'
-                   list=model.features.paragon}}
-
-<h5>items</h5>
-
-{{screenshots-list title='armor' 
-                   path='items/'
-                   list=model.items}}
+{{char-items model=model}}
 
 {{yield}}
