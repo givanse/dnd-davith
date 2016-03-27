@@ -6,6 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('char', {
+    path: '/char/:char_name'
+  }, function() {
+    this.route('profile');
+    this.route('powers');
+    this.route('items');
+  });
 });
 
 export default Router;

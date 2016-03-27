@@ -9,16 +9,13 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{char-items}}`);
+  this.set('model', {
+    items: [
+      {level: 9, name: 'gleaming diamond bracers'}
+    ]
+  });
 
-  assert.equal(this.$().text().trim(), '');
+  this.render(hbs`{{char-items model=model}}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#char-items}}
-      template block text
-    {{/char-items}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(/gleaming diamond bracers/.test(this.$().text()));
 });

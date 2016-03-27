@@ -1,12 +1,19 @@
 
 <h2>{{model.name}}</h2>
 
-{{char-profile model=model}}
+<ul>
+  <li>
+    {{link-to 'Profile' 'char.profile' model}}
+  </li>
+  <li>
+    {{link-to 'Powers' 'char.powers' model}}
+  </li>
+  <li>
+    {{link-to 'Items' 'char.items' model}}
+  </li>
+</ul>
 
-<br>
 
-{{char-powers model=model}}
 
-{{char-items model=model}}
 
 {{yield}}

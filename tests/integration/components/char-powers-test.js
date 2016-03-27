@@ -9,16 +9,17 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{char-powers}}`);
+  this.set('model', {
+    powers: {
+      atWill: [
+        {level: 1, name: 'grappling spirits'},
+        {level: 1, name: 'guardian harrier'}
+      ]
+    }
+  });
 
-  assert.equal(this.$().text().trim(), '');
+  this.render(hbs`{{char-powers model=model}}`);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#char-powers}}
-      template block text
-    {{/char-powers}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(/grappling spirits/.test(this.$().text()));
+  assert.ok(/guardian harrier/.test(this.$().text()));
 });

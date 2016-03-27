@@ -12,7 +12,8 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{screen-shot}}`);
 
-  assert.equal(this.$().text().trim(), 'ERROR: missing name.');
+  let expected = 'ERROR: `screen-shot` missing model.name';
+  assert.equal(this.$().text().trim(), expected);
 
   // Template block usage:" + EOL +
   this.render(hbs`
@@ -20,5 +21,5 @@ test('it renders', function(assert) {
     {{/screen-shot}}
   `);
 
-  assert.equal(this.$().text().trim(), 'ERROR: missing name.');
+  assert.equal(this.$().text().trim(), expected);
 });
