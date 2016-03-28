@@ -4,38 +4,77 @@ export default Ember.Component.extend({
 
   stats: null,
 
-  abilities: Ember.computed('stats.abilities', function() {
+  modifiersList: Ember.computed('modifiers', function() {
+    let modifiers = this.get('modifiers');
+
+    if (! modifiers) {
+      return null;
+    }
+
+    return Object.keys(modifiers).map(function(key) {
+      return {
+        name: key,
+        value1: modifiers[key].value1,
+        value2: modifiers[key].value2
+      };
+    });
+  }),
+
+  modifiers: Ember.computed('stats.abilities', function() {
     let abilities = this.get('stats.abilities');  
 
     if (! abilities) {
       return null;
     }
 
-    return Object.keys(abilities).map(function(key) {
-      let abilityScore = abilities[key];
+    let level = this.get('stats.level');  
+    let modifiers = {};
 
-      let modifier = (abilityScore - 10) / 2;
-      modifier = Math.floor(modifier);
+    for (var ability of abilities) {
+      let value = (ability.value - 10) / 2;
+      value = Math.floor(value);
 
-      return {
-        name: key,
-        value: abilityScore,
-        modifier: modifier
+      let modifier = {
+        value1: value, 
+        value2: value + Math.floor(level / 2) 
       };
-    });
+      modifiers[ability.name] = modifier; 
+    }
+
+    return modifiers;
+  }),
+
+  //TODO: feats and items are not accounted for
+  skills: Ember.computed('stats.skills', 'modifiers', function() {
+    let skills = this.get('stats.skills');
+
+    if (! skills) {
+      return null;
+    }
+
+    let modifiers = this.get('modifiers');
+
+    for (var skill of skills) {
+      let modifier = modifiers[skill.modifier];
+      let value = modifier.value2 +
+                  (skill.trained ? 5 : 0);
+      skill.value = value; 
+    }
+  
+    return skills;
   }),
 
   didInsertElement: function() {
-    let data = this.get('abilities'); 
+    let abilities = this.get('stats.abilities'); 
+    if (! abilities) { return; }
+    this._renderGraph('.abilities_chart', abilities);
 
-    if (! data) {
-      return;
-    }
-
-    this._renderAbilitiesGraph(data);
+    let skills = this.get('skills'); 
+    if (! skills) { return; }
+    this._renderGraph('.skills_chart', skills);
   },
 
-  _renderAbilitiesGraph(data) {
+  _renderGraph(selector, data) {
     let barHeight = 20;
     let width = 420;
 
@@ -44,7 +83,7 @@ export default Ember.Component.extend({
       .domain([0, max])
       .range([0, width]);
 
-    var chart = d3.select('.abilities_chart')
+    var chart = d3.select(selector)
       .attr('width', width)
       .attr('height', barHeight * data.length);
 

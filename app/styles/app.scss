@@ -53,19 +53,21 @@ footer {
   background-color: #ececec;
 }
 
+.skills_chart rect,
 .abilities_chart rect {
   fill: #8046B4;
 }
 
+.skills_chart text,
 .abilities_chart text {
   fill: white;
   font: 10px sans-serif;
 }
 
-.abilities_chart .anchor_end {
+.anchor_end {
   text-anchor: end;
 }
 
-.abilities_chart .anchor_start {
+.anchor_start {
   text-anchor: start;
 }

@@ -53,14 +53,102 @@ const fixture =
 
     actionPoints: 0,
 
-    abilities: {
-      strength: 20,
-      constitution: 15,
-      dexterity: 14,
-      intelligence: 14,
-      wisdom: 21,
-      charisma: 13
-    }
+    abilities: [
+      {name: 'strength', value: 20},
+      {name: 'constitution', value: 15},
+      {name: 'dexterity', value: 14},
+      {name: 'intelligence', value: 14},
+      {name: 'wisdom', value: 21},
+      {name: 'charisma', value: 13}
+    ],
+
+    skills: [
+      {
+        name: 'acrobatics',
+        trained: false,
+        modifier: 'dexterity'
+      },
+      {
+        name: 'arcana',
+        trained: false,
+        modifier: 'intelligence'
+      },
+      {
+        name: 'athletics',
+        trained: false,
+        modifier: 'strength'
+      },
+      {
+        name: 'bluff',
+        trained: false,
+        modifier: 'charisma'
+      },
+      {
+        name: 'diplomacy',
+        trained: false,
+        modifier: 'charisma'
+      },
+      {
+        name: 'dungeoneering',
+        trained: false,
+        modifier: 'wisdom'
+      },
+      {
+        name: 'endurance',
+        trained: false,
+        modifier: 'constitution'
+      },
+      {
+        name: 'heal',
+        trained: true,
+        modifier: 'wisdom'
+      },
+      {
+        name: 'history',
+        trained: false,
+        modifier: 'intelligence'
+      },
+      {
+        name: 'insight',
+        trained: true,
+        modifier: 'wisdom'
+      },
+      {
+        name: 'intimidate',
+        trained: false,
+        modifier: 'charisma'
+      },
+      {
+        name: 'nature',
+        trained: true,
+        modifier: 'wisdom'
+      },
+      {
+        name: 'perception',
+        trained: true,
+        modifier: 'wisdom'
+      },
+      {
+        name: 'religion',
+        trained: false,
+        modifier: 'intelligence'
+      },
+      {
+        name: 'stealth',
+        trained: false,
+        modifier: 'dexterity'
+      },
+      {
+        name: 'streetwise',
+        trained: false,
+        modifier: 'charisma'
+      },
+      {
+        name: 'thievery',
+        trained: false,
+        modifier: 'dexterity'
+      }
+    ]
   },
 
   powers: {
@@ -130,8 +218,6 @@ const fixture =
         source: 'PH3 p133'
       }
     ],
-    destiny: [
-    ]
   },
 
   items: [

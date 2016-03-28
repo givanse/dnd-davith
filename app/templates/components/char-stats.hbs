@@ -23,9 +23,15 @@ An ability score is a natural number, with a value of 10 or 11 representing aver
   <!-- D3 -->
 </svg>
 
+<h5>Skills</h5>
+
+<svg class="skills_chart">
+  <!-- D3 -->
+</svg>
+
 <h5>Modifiers</h5>
 
-{{#each abilities as |ability|}}
-  {{ability.name}}: {{ability.modifier}}
+{{#each modifiersList as |modifier|}}
+  {{modifier.name}}: {{modifier.value1}}, {{modifier.value2}}
   <br>
 {{/each}}
