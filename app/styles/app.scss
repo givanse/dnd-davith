@@ -53,11 +53,12 @@ footer {
   background-color: #ececec;
 }
 
-.abilities_chart div {
+.abilities_chart rect {
+  fill: #8046B4;
+}
+
+.abilities_chart text {
+  fill: white;
   font: 10px sans-serif;
-  background-color: #8046B4;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
+  text-anchor: end;
 }

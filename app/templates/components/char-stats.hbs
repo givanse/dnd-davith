@@ -1,21 +1,20 @@
-exp: {{stats.exp}}
-<br>
+
 level: {{stats.level}}
 <br>
-{{stats.hp}}
+exp: {{stats.exp}}
 <br>
-{{stats.surge_value}}
+health: {{stats.hp}}
 <br>
-{{stats.surges}}
+surges: {{stats.surges}} value: {{stats.surge_value}}
 <br>
-{{stats.movement}}
+movement: {{stats.movement}}
 
 <br>
 
 <h5>Abilities</h5>
 
-<div class="abilities_chart">
+<svg class="abilities_chart">
   <!-- D3 -->
-</div>
+</svg>
 
 {{yield}}

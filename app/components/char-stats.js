@@ -6,6 +6,11 @@ export default Ember.Component.extend({
 
   abilities: Ember.computed('stats.abilities', function() {
     let abilities = this.get('stats.abilities');  
+
+    if (! abilities) {
+      return null;
+    }
+
     return Object.keys(abilities).map(function(key) {
       return {
         name: key,
@@ -14,30 +19,41 @@ export default Ember.Component.extend({
     });
   }),
 
-  _maxAbility: function(hash) {
-    let max = 0;
-    Object.keys(hash).map(function(key) {
-      let obj = hash[key];
-      if (obj.value> max) {
-        max = obj.value;
-      }
-    });
-    return max;
-  },
-
   didInsertElement: function() {
     let data = this.get('abilities'); 
 
-    var scale = d3.scale.linear()
-      .domain([0, this._maxAbility(data)])
-      .range([0, 420]);
+    if (! data) {
+      return;
+    }
 
-    let chart = d3.select('.abilities_chart');
-    let bar = chart.selectAll('div');
-    let barUpdate = bar.data(data);
-    let barEnter = barUpdate.enter().append('div');
-    barEnter.style('width', function(d) { return scale(d.value) + 'px'; })
-            .text(function(d) { return d.name + ' ' + d.value; });
+    let barHeight = 20;
+    let width = 420;
+
+    let max = d3.max(data, function(d) { return d.value; });
+    var x = d3.scale.linear()
+      .domain([0, max])
+      .range([0, width]);
+
+    var chart = d3.select('.abilities_chart')
+      .attr('width', width)
+      .attr('height', barHeight * data.length);
+
+    var bar = chart.selectAll('g')
+        .data(data)
+      .enter().append('g')
+        .attr('transform', function(d, i) {
+          return 'translate(0,' + i * barHeight + ')';
+        });
+
+    bar.append('rect')
+       .attr('width', function(d) { return x(d.value); })
+       .attr('height', barHeight - 1);
+
+    bar.append('text')
+       .attr('x', function(d) { return x(d.value) - 3; })
+       .attr('y', barHeight / 2)
+       .attr('dy', '.35em')
+       .text(function(d) { return d.name + ' ' + d.value; });
   }
 
 });
