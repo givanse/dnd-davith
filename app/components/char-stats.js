@@ -12,9 +12,15 @@ export default Ember.Component.extend({
     }
 
     return Object.keys(abilities).map(function(key) {
+      let abilityScore = abilities[key];
+
+      let modifier = (abilityScore - 10) / 2;
+      modifier = Math.floor(modifier);
+
       return {
         name: key,
-        value: abilities[key]
+        value: abilityScore,
+        modifier: modifier
       };
     });
   }),
@@ -26,6 +32,10 @@ export default Ember.Component.extend({
       return;
     }
 
+    this._renderAbilitiesGraph(data);
+  },
+
+  _renderAbilitiesGraph(data) {
     let barHeight = 20;
     let width = 420;
 

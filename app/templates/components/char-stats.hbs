@@ -13,8 +13,19 @@ movement: {{stats.movement}}
 
 <h5>Abilities</h5>
 
+<p>
+<i>
+An ability score is a natural number, with a value of 10 or 11 representing average human ability.
+</i>
+</p>
+
 <svg class="abilities_chart">
   <!-- D3 -->
 </svg>
 
-{{yield}}
+<h5>Modifiers</h5>
+
+{{#each abilities as |ability|}}
+  {{ability.name}}: {{ability.modifier}}
+  <br>
+{{/each}}
