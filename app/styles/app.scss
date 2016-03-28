@@ -60,5 +60,12 @@ footer {
 .abilities_chart text {
   fill: white;
   font: 10px sans-serif;
+}
+
+.abilities_chart .anchor_end {
   text-anchor: end;
+}
+
+.abilities_chart .anchor_start {
+  text-anchor: start;
 }

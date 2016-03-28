@@ -49,11 +49,21 @@ export default Ember.Component.extend({
        .attr('width', function(d) { return x(d.value); })
        .attr('height', barHeight - 1);
 
+    let paddingRight = 6;
     bar.append('text')
-       .attr('x', function(d) { return x(d.value) - 3; })
+       .attr('class', 'anchor_end')
+       .attr('x', function(d) { return x(d.value) - paddingRight; })
        .attr('y', barHeight / 2)
        .attr('dy', '.35em')
-       .text(function(d) { return d.name + ' ' + d.value; });
+       .text(function(d) { return d.value; });
+
+    let paddingLeft = 6;
+    bar.append('text')
+       .attr('class', 'anchor_start')
+       .attr('x', paddingLeft)
+       .attr('y', barHeight / 2)
+       .attr('dy', '.35em')
+       .text(function(d) { return d.name; });
   }
 
 });
